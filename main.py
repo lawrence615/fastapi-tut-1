@@ -7,9 +7,13 @@ app = FastAPI()
 def index():
     return {'message':'Hello World!'}
 
+# @app.get('/blog/all')
+# def get_all_blogs():
+#     return {'message': 'All blogs provided'}
+
 @app.get('/blog/all')
-def get_all_blogs():
-    return {'message': 'All blogs provided'}
+def get_all_blogs(page, size):
+    return {'message': F'All {size} blogs on page {page}'}
 
 class BlogType(str, Enum):
     short ='short'
