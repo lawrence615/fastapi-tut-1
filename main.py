@@ -12,8 +12,8 @@ def index():
 #     return {'message': 'All blogs provided'}
 
 @app.get('/blog/all')
-def get_all_blogs(page, size):
-    return {'message': F'All {size} blogs on page {page}'}
+def get_all_blogs(page = 1, page_size = 10):
+    return {'message': F'All {page_size} blogs on page {page}'}
 
 class BlogType(str, Enum):
     short ='short'
